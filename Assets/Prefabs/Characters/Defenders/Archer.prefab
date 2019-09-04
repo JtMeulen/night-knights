@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 114475331241058608}
   - component: {fileID: 114475331241058615}
   - component: {fileID: 1582626990}
+  - component: {fileID: -3239007674554311611}
   m_Layer: 0
   m_Name: Archer
   m_TagString: Untagged
@@ -117,6 +118,19 @@ MonoBehaviour:
   projectile: {fileID: 5241264044418027285, guid: 2a7926a46ed24427fa8aee7394666cd8,
     type: 3}
   dispenser: {fileID: 5495040687244028372}
+--- !u!114 &-3239007674554311611
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 114475331241058614}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e55f9c381058f40d3b4222d4f23d008d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cost: 100
 --- !u!1 &5495040687244028372
 GameObject:
   m_ObjectHideFlags: 0

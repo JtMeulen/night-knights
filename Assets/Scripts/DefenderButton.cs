@@ -7,6 +7,8 @@ public class DefenderButton : MonoBehaviour
     Color32 darkColor = new Color32(50, 50, 50, 255);
     Color32 whiteColor = new Color32(255, 255, 255, 255);
 
+    [SerializeField] Defender defenderPrefab;
+
     private void OnMouseDown()
     {
         var buttons = FindObjectsOfType<DefenderButton>();
@@ -17,5 +19,7 @@ public class DefenderButton : MonoBehaviour
         }
 
         GetComponent<SpriteRenderer>().color = whiteColor;
+
+        FindObjectOfType<DefenderSpawner>().SetSelectedDefender(defenderPrefab);
     }
 }
