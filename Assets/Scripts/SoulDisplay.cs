@@ -30,4 +30,9 @@ public class SoulDisplay : MonoBehaviour
         souls -= amount;
         UpdateSoulDisplay();
     }
+
+    public int GetSoulsAmount()
+    {
+        return souls;
+    }
 }

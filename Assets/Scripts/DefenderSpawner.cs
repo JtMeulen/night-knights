@@ -15,6 +15,22 @@ public class DefenderSpawner : MonoBehaviour
     {
         if (defender)
         {
+            AttemptToPlaceDefender();
+        }
+    }
+
+    private void AttemptToPlaceDefender()
+    {
+        SoulDisplay soulDisplay = FindObjectOfType<SoulDisplay>();
+        int soulCost = defender.GetSoulCost();
+        int totalSouls = soulDisplay.GetSoulsAmount();
+
+        // Place defender if enough recourses
+        if (soulCost <= totalSouls)
+        {
+            // Subtract the amount in the SoulDisplay
+            soulDisplay.SubtractSouls(soulCost);
+            // Place the defender on the grid
             Instantiate(defender, GetSquareClicked(), Quaternion.identity);
         }
     }

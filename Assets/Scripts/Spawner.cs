@@ -25,6 +25,7 @@ public class Spawner : MonoBehaviour
 
     private void SpawnAttacker()
     {
-        Instantiate(attackerPrefab, transform.position, transform.rotation);
+        GameObject newAttacker = Instantiate(attackerPrefab, transform.position, transform.rotation);
+        newAttacker.transform.parent = transform;
     }
 }

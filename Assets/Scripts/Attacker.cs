@@ -37,6 +37,7 @@ public class Attacker : MonoBehaviour
         if(!HitVFX) { return; }
 
         GameObject bloodVFX = Instantiate(HitVFX, transform.position, transform.rotation);
+        bloodVFX.transform.parent = transform;
         Destroy(bloodVFX, 1f);
     }
 }
