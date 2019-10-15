@@ -35,7 +35,7 @@ public class Attacker : MonoBehaviour
 
         if(health <= 0)
         {
-            Destroy(gameObject);
+            GetComponent<Animator>().SetBool("IsDead", true);
         }
     }
 
@@ -68,5 +68,10 @@ public class Attacker : MonoBehaviour
         {
             defender.DealDamage(damage);
         }
+    }
+
+    public void DestroyGameObject()
+    {
+        Destroy(gameObject);
     }
 }
