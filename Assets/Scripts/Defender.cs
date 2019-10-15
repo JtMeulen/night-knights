@@ -5,6 +5,7 @@ using UnityEngine;
 public class Defender : MonoBehaviour
 {
     [SerializeField] int cost = 100;
+    [SerializeField] float health = 100f;
 
     public int GetSoulCost()
     {
@@ -14,5 +15,25 @@ public class Defender : MonoBehaviour
     public void AddSouls(int amount)
     {
         FindObjectOfType<SoulDisplay>().AddSouls(amount);
+    }
+
+    public float GetHealth()
+    {
+        return health;
+    }
+
+
+    public void DealDamage(float damage)
+    {
+        health -= damage;
+        if (health <= 0)
+        {
+            GetComponent<Animator>().SetBool("IsDead", true);
+        }
+    }
+
+    public void DestroyGameObject()
+    {
+        Destroy(gameObject);
     }
 }

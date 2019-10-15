@@ -7,11 +7,19 @@ public class Attacker : MonoBehaviour
 {
     [Range(0f,5f)] [SerializeField] float movementSpeed = 1f;
 	[SerializeField] float health = 50f;
-	[SerializeField] GameObject HitVFX;
+    [SerializeField] float damage = 20f;
+    [SerializeField] GameObject HitVFX;
+    private GameObject currentTarget;
+
 
     private void Update()
     {
         transform.Translate(Vector2.left * Time.deltaTime * movementSpeed);
+
+        if(!currentTarget)
+        {
+            GetComponent<Animator>().SetBool("IsAttacking", false);
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D otherCollider)
@@ -24,7 +32,6 @@ public class Attacker : MonoBehaviour
             Destroy(otherCollider.gameObject);
             PlayVFX();
         }
-        
 
         if(health <= 0)
         {
@@ -39,5 +46,27 @@ public class Attacker : MonoBehaviour
         GameObject bloodVFX = Instantiate(HitVFX, transform.position, transform.rotation);
         bloodVFX.transform.parent = transform;
         Destroy(bloodVFX, 1f);
+    }
+
+    public void SetMovementSpeed(float speed)
+    {
+        movementSpeed = speed;
+    }
+
+    public void Attack(GameObject target)
+    {
+        GetComponent<Animator>().SetBool("IsAttacking", true);
+        currentTarget = target;
+    }
+
+    public void DamageCurrentTarget()
+    {
+        if (!currentTarget) { return; }
+
+        Defender defender = currentTarget.GetComponent<Defender>();
+        if (defender.GetHealth() > 0)
+        {
+            defender.DealDamage(damage);
+        }
     }
 }
