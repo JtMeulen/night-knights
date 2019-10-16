@@ -8,7 +8,7 @@ using Random = UnityEngine.Random;
 public class Spawner : MonoBehaviour
 {
     [Header("Spawning Config")]
-    [SerializeField] GameObject attackerPrefab;
+    [SerializeField] Attacker[] attackerArray;
     [SerializeField] float minSpawnDelay = 1f;
     [SerializeField] float maxSpawnDelay = 5f;
 
@@ -25,7 +25,11 @@ public class Spawner : MonoBehaviour
 
     private void SpawnAttacker()
     {
-        GameObject newAttacker = Instantiate(attackerPrefab, transform.position, transform.rotation);
+        int randomIndex = Random.Range(0, attackerArray.Length);
+        Debug.Log(randomIndex);
+        Attacker randomAttacker = attackerArray[randomIndex];
+
+        Attacker newAttacker = Instantiate(randomAttacker, transform.position, transform.rotation);
         newAttacker.transform.parent = transform;
     }
 }
