@@ -26,10 +26,14 @@ public class Spawner : MonoBehaviour
     private void SpawnAttacker()
     {
         int randomIndex = Random.Range(0, attackerArray.Length);
-        Debug.Log(randomIndex);
         Attacker randomAttacker = attackerArray[randomIndex];
 
         Attacker newAttacker = Instantiate(randomAttacker, transform.position, transform.rotation);
         newAttacker.transform.parent = transform;
+    }
+
+    public void StopSpawning()
+    {
+        spawning = false;
     }
 }

@@ -11,6 +11,10 @@ public class Attacker : MonoBehaviour
     [SerializeField] GameObject HitVFX;
     private GameObject currentTarget;
 
+    private void Awake()
+    {
+        FindObjectOfType<LevelController>().AttackerSpawned();
+    }
 
     private void Update()
     {
@@ -72,6 +76,7 @@ public class Attacker : MonoBehaviour
 
     public void DestroyGameObject()
     {
+        FindObjectOfType<LevelController>().AttackerKilled();
         Destroy(gameObject);
     }
 }
