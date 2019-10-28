@@ -35,7 +35,7 @@ public class DefenderBase : MonoBehaviour
 
         if(baseHealth < 1)
         {
-            FindObjectOfType<SceneLoader>().LoadGameOverScene();
+            FindObjectOfType<LevelController>().GameOver();
         }
     }
 }

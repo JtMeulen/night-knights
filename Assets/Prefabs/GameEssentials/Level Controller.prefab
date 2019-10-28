@@ -43,3 +43,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c47758b54dee41c1b36a04875159ac2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  winText: {fileID: 0}
+  gameOverOverlay: {fileID: 0}
+  SecondsToWaitForNewLevel: 2

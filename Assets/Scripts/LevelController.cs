@@ -5,6 +5,7 @@ using UnityEngine;
 public class LevelController : MonoBehaviour
 {
     [SerializeField] GameObject winText;
+    [SerializeField] GameObject gameOverOverlay;
     [SerializeField] int SecondsToWaitForNewLevel = 2;
     private int activeAttackers = 0;
     private bool levelTimerFinished = false;
@@ -12,6 +13,7 @@ public class LevelController : MonoBehaviour
     private void Start()
     {
         winText.SetActive(false);
+        gameOverOverlay.SetActive(false);
     }
 
     public void AttackerSpawned()
@@ -50,6 +52,13 @@ public class LevelController : MonoBehaviour
         {
             spawner.StopSpawning();
         }
+    }
+
+    public void GameOver()
+    {
+        Time.timeScale = 0;
+        StopSpawning();
+        gameOverOverlay.SetActive(true);
     }
 
 
