@@ -59,6 +59,11 @@ public class SceneLoader : MonoBehaviour
         SceneManager.LoadScene(currentScene);
     }
 
+    public void SettingsLoader()
+    {
+        SceneManager.LoadScene("Settings Screen");
+    }
+
     public void QuitGame()
     {
         Application.Quit();
