@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class DefenderButton : MonoBehaviour
 {
@@ -8,6 +9,11 @@ public class DefenderButton : MonoBehaviour
     Color32 whiteColor = new Color32(255, 255, 255, 255);
 
     [SerializeField] Defender defenderPrefab;
+
+    private void Start()
+    {
+        GetComponentInChildren<Text>().text = defenderPrefab.GetSoulCost().ToString();
+    }
 
     private void OnMouseDown()
     {

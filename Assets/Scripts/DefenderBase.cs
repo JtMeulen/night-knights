@@ -5,11 +5,13 @@ using UnityEngine;
 
 public class DefenderBase : MonoBehaviour
 {
-    [SerializeField] float baseHealth = 5f;
+    private float baseHealth = 5f;
     private BaseHealthDisplay healthDisplay;
 
     private void Start()
     {
+        baseHealth = PlayerPrefsController.GetDifficulty();
+
         healthDisplay = FindObjectOfType<BaseHealthDisplay>();
         healthDisplay.UpdateHealthDisplay(baseHealth);
     }

@@ -330,6 +330,14 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 617412252, guid: dd7fdb3fa84524fad9eef2ce8122a266, type: 3}
+      propertyPath: levelTime
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 827933945, guid: dd7fdb3fa84524fad9eef2ce8122a266, type: 3}
+      propertyPath: souls
+      value: 100
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dd7fdb3fa84524fad9eef2ce8122a266, type: 3}
 --- !u!1001 &2127041011
@@ -628,6 +636,11 @@ PrefabInstance:
       propertyPath: gameOverOverlay
       value: 
       objectReference: {fileID: 7505972991225912182}
+    - target: {fileID: 1410645978409908333, guid: bc75af47b5b52403fa3d83965281f03f,
+        type: 3}
+      propertyPath: SecondsToWaitForNewLevel
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bc75af47b5b52403fa3d83965281f03f, type: 3}
 --- !u!1001 &7505972991225912181
